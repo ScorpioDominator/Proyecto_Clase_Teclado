@@ -6,44 +6,93 @@ import java.util.Scanner;
 public class Teclado {
 
 	public enum Comparacion {
-		MayorOIgual, MenorOIgual, Mayor, Menor
+		MAYOR_O_IGUAL, MENOR_O_IGUAL, MAYOR, MENOR
 	}
 
 	public enum Rango {
-		Ambos_Incluidos, Ambos_Excluidos, Mínimo_Excluido_Máximo_Inluido, Máximo_Excluido_Mínimo_Incluido
+		AMBOS_INCLUIDOS, AMBOS_EXCLUIDOS, MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO, MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO
 	}
 
 	static Scanner keyboard = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
-		Rango tipo = Rango.Mínimo_Excluido_Máximo_Inluido;
-		Comparacion numero = Comparacion.Mayor;
-		byte byte1 = 0, byte2 = 3, byte3 = 90;
-		short short1 = 0, short2 = 7, short3 = 10;
-		int numeroMenu, int1 = 0, int2 = 50, int3 = 700;
-		double double1 = 0, double2 = 50, double3 = 70.5;
-		long long1 = 0, long2 = 3000, long3 = 70000;
-		float float1 = 0, float2 = 60, float3 = 79;
+		Rango tipo1 = Rango.AMBOS_INCLUIDOS, tipo2 = Rango.AMBOS_EXCLUIDOS, tipo3=Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO,
+				tipo4=Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO;
+		Comparacion numero1 = Comparacion.MAYOR_O_IGUAL, numero2=Comparacion.MENOR_O_IGUAL, numero3=Comparacion.MAYOR, 
+				numero4=Comparacion.MENOR;
+		byte byte1 = 0, byte2 = 20, byte3 = 30;
+		short short1 = 0, short2 = 20, short3 = 30;
+		int numeroMenu, int1 = 0, int2 = 20, int3 = 30;
+		double double1 = 0, double2 = 20, double3 = 30;
+		long long1 = 0, long2 = 20, long3 = 30;
+		float float1 = 0, float2 = 20, float3 = 30;
 		char charKey = ' ';
 		String stringKey = " ", Elección = "Elige color", Opción1 = "1.1 Rojo", Opción2 = "1.2 Verde",
 				pregunta = "¿Estas casado?";
 
-		System.out.print("Introduce \"1\" para cerrar el teclado \n" + "Introduce \"2\" para introducir un carácter \n"
-				+ "Introduce \"3\" para introducir una cadena \n" + "Introduce \"4\" para leer un boolean \n"
-				+ "Introduce \"5\" para leer un boolean \n" + "Introduce \"6\" para leer un byte \n"
-				+ "Introduce \"7\" para leer un short \n" + "Introduce \"8\" para leer un int \n"
-				+ "Introduce \"9\" para leer un double \n" + "Introduce \"10\" para leer un long \n"
-				+ "Introduce \"11\" para leer un float \n" + "Introduce \"12\" para leer y comparar byte \n"
-				+ "Introduce \"13\" para leer y comparar short \n" + "Introduce \"14\" para leer y comparar int \n"
-				+ "Introduce \"15\" para leer y comparar double \n" + "Introduce \"16\" para leer y comparar long \n"
-				+ "Introduce \"17\" para leer y comparar float \n"
-				+ "Introduce \"18\" para escribir dentro de un rango byte \n"
-				+ "Introduce \"19\" para escribir dentro de un rango short \n"
-				+ "Introduce \"20\" para escribir dentro de un rango int \n"
-				+ "Introduce \"21\" para escribir dentro de un rango double \n"
-				+ "Introduce \"22\" para escribir dentro de un rango long \n"
-				+ "Introduce \"23\" para escribir dentro de un rango float \n");
+		System.out.print("Introduce \"1\" para cerrar el teclado \n" 
+				+ "Introduce \"2\" para introducir un carácter \n"
+				+ "Introduce \"3\" para introducir una cadena \n" 
+				+ "Introduce \"4\" para leer un boolean \n"
+				+ "Introduce \"5\" para leer un boolean \n" 
+				+ "Introduce \"6\" para leer un byte \n"
+				+ "Introduce \"7\" para leer un short \n" 
+				+ "Introduce \"8\" para leer un int \n"
+				+ "Introduce \"9\" para leer un double \n" 
+				+ "Introduce \"10\" para leer un long \n"
+				+ "Introduce \"11\" para leer un float \n" 
+				+ "Introduce \"12\" para leer y comparar byte mayor o igual \n"
+				+ "Introduce \"13\" para leer y comparar byte menor o igual \n"
+				+ "Introduce \"14\" para leer y comparar byte mayor \n"
+				+ "Introduce \"15\" para leer y comparar byte menor \n"
+				+ "Introduce \"16\" para leer y comparar short mayor o igual \n" 
+				+ "Introduce \"17\" para leer y comparar short menor o igual \n"
+				+ "Introduce \"18\" para leer y comparar short mayor \n" 
+				+ "Introduce \"19\" para leer y comparar short menor o igual \n"
+				+ "Introduce \"20\" para leer y comparar int mayor o igual \n"
+				+ "Introduce \"21\" para leer y comparar int menor o igual \n"
+				+ "Introduce \"22\" para leer y comparar int mayor \n"
+				+ "Introduce \"23\" para leer y comparar int menor \n"
+				+ "Introduce \"24\" para leer y comparar double mayor o igual \n" 
+				+ "Introduce \"25\" para leer y comparar double menor o igual \n"
+				+ "Introduce \"26\" para leer y comparar double mayor \n"
+				+ "Introduce \"25\" para leer y comparar double menor \n"
+				+ "Introduce \"28\" para leer y comparar long mayor o igual \n"
+				+ "Introduce \"29\" para leer y comparar long menor o igual \n"
+				+ "Introduce \"30\" para leer y comparar long mayor \n"
+				+ "Introduce \"31\" para leer y comparar long menor \n"
+				+ "Introduce \"32\" para leer y comparar float mayor o igual \n"
+				+ "Introduce \"33\" para leer y comparar float menor o igual \n"
+				+ "Introduce \"34\" para leer y comparar float mayor \n"
+				+ "Introduce \"35\" para leer y comparar float menor \n"
+				+ "Introduce \"36\" para escribir dentro de un rango ambos incluidos byte \n"
+				+ "Introduce \"37\" para escribir dentro de un rango ambos excluidos byte \n"
+				+ "Introduce \"38\" para escribir dentro de un rango mínimo excluido máximo incluido byte \n"
+				+ "Introduce \"39\" para escribir dentro de un rango mínimo incluido máximo excluido byte \n"
+				+ "Introduce \"40\" para escribir dentro de un rango ambos incluidos short \n"
+				+ "Introduce \"41\" para escribir dentro de un rango ambos excluidos short \n"
+				+ "Introduce \"42\" para escribir dentro de un rango mínimo excluido máximo incluido short \n"
+				+ "Introduce \"43\" para escribir dentro de un rango mínimo incluido máximo excluido short \n"
+				+ "Introduce \"44\" para escribir dentro de un rango ambos incluidos int \n"
+				+ "Introduce \"45\" para escribir dentro de un rango ambos excluidos int \n"
+				+ "Introduce \"46\" para escribir dentro de un rango mínimo excluido máximo incluido int \n"
+				+ "Introduce \"47\" para escribir dentro de un rango mínimo incluido máximo excluido int \n"
+				+ "Introduce \"48\" para escribir dentro de un rango ambos incluidos long \n"
+				+ "Introduce \"49\" para escribir dentro de un rango ambos excluidos long \n"
+				+ "Introduce \"50\" para escribir dentro de un rango mínimo excluido máximo incluido long \n"
+				+ "Introduce \"51\" para escribir dentro de un rango mínimo incluido máximo excluido long \n"
+				+ "Introduce \"52\" para escribir dentro de un rango ambos incluidos double \n"
+				+ "Introduce \"53\" para escribir dentro de un rango ambos excluidos double \n"
+				+ "Introduce \"54\" para escribir dentro de un rango mínimo excluido máximo incluido double \n"
+				+ "Introduce \"55\" para escribir dentro de un rango mínimo incluido máximo excluido double \n"
+				+ "Introduce \"56\" para escribir dentro de un rango ambos incluidos float \n"
+				+ "Introduce \"57\" para escribir dentro de un rango ambos excluidos float \n"
+				+ "Introduce \"58\" para escribir dentro de un rango mínimo excluido máximo incluido float \n"
+				+ "Introduce \"59\" para escribir dentro de un rango mínimo incluido máximo excluido float \n"
+
+
+);
 
 		numeroMenu = keyboard.nextInt();
 		keyboard.nextLine();
@@ -85,40 +134,148 @@ public class Teclado {
 			System.out.println(LecturaNumero(float1, keyboard));
 			break;
 		case 12:
-			System.out.println(LecturaComparacion(byte1, byte2, numero));
+			System.out.println(LecturaComparacion(byte1, byte2, numero1));
 			break;
 		case 13:
-			System.out.println(LecturaComparacion(short1, short2, numero));
+			System.out.println(LecturaComparacion(byte1, byte2, numero2));
 			break;
 		case 14:
-			System.out.println(LecturaComparacion(int1, int2, numero));
+			System.out.println(LecturaComparacion(byte1, byte2, numero3));
 			break;
 		case 15:
-			System.out.println(LecturaComparacion(double1, double2, numero));
+			System.out.println(LecturaComparacion(byte1, byte2, numero4));
 			break;
 		case 16:
-			System.out.println(LecturaComparacion(long1, long2, numero));
+			System.out.println(LecturaComparacion(short1, short2, numero1));
 			break;
 		case 17:
-			System.out.println(LecturaComparacion(float1, float2, numero));
+			System.out.println(LecturaComparacion(short1, short2, numero2));
 			break;
 		case 18:
-			System.out.print(LecturaRango(byte2, byte3, byte1, tipo));
+			System.out.println(LecturaComparacion(short1, short2, numero3));
 			break;
 		case 19:
-			System.out.print(LecturaRango(short2, short3, short1, tipo));
+			System.out.println(LecturaComparacion(short1, short2, numero4));
 			break;
 		case 20:
-			System.out.print(LecturaRango(int2, int3, int1, tipo));
+			System.out.println(LecturaComparacion(int1, int2, numero1));
 			break;
 		case 21:
-			System.out.print(LecturaRango(double2, double3, double1, tipo));
+			System.out.println(LecturaComparacion(int1, int2, numero2));
 			break;
 		case 22:
-			System.out.print(LecturaRango(long2, long3, long1, tipo));
+			System.out.println(LecturaComparacion(int1, int2, numero3));
 			break;
 		case 23:
-			System.out.print(LecturaRango(float2, float3, float1, tipo));
+			System.out.println(LecturaComparacion(int1, int2, numero4));
+			break;
+		case 24:
+			System.out.println(LecturaComparacion(double1, double2, numero1));
+			break;
+		case 25:
+			System.out.println(LecturaComparacion(double1, double2, numero2));
+			break;
+		case 26:
+			System.out.println(LecturaComparacion(double1, double2, numero3));
+			break;
+		case 27:
+			System.out.println(LecturaComparacion(double1, double2, numero4));
+			break;
+		case 28:
+			System.out.println(LecturaComparacion(long1, long2, numero1));
+			break;
+		case 29:
+			System.out.println(LecturaComparacion(long1, long2, numero2));
+			break;
+		case 30:
+			System.out.println(LecturaComparacion(long1, long2, numero3));
+			break;
+		case 31:
+			System.out.println(LecturaComparacion(long1, long2, numero4));
+			break;
+		case 32:
+			System.out.println(LecturaComparacion(float1, float2, numero1));
+			break;
+		case 33:
+			System.out.println(LecturaComparacion(float1, float2, numero2));
+			break;
+		case 34:
+			System.out.println(LecturaComparacion(float1, float2, numero3));
+			break;
+		case 35:
+			System.out.println(LecturaComparacion(float1, float2, numero4));
+			break;
+		case 36:
+			System.out.print(LecturaRango(byte2, byte3, byte1, tipo1));
+			break;
+		case 37:
+			System.out.print(LecturaRango(byte2, byte3, byte1, tipo2));
+			break;
+		case 38:
+			System.out.print(LecturaRango(byte2, byte3, byte1, tipo3));
+			break;
+		case 39:
+			System.out.print(LecturaRango(byte2, byte3, byte1, tipo4));
+			break;
+		case 40:
+			System.out.print(LecturaRango(short2, short3, short1, tipo1));
+			break;
+		case 41:
+			System.out.print(LecturaRango(short2, short3, short1, tipo2));
+			break;
+		case 42:
+			System.out.print(LecturaRango(short2, short3, short1, tipo3));
+			break;
+		case 43:
+			System.out.print(LecturaRango(short2, short3, short1, tipo4));
+			break;
+		case 44:
+			System.out.print(LecturaRango(int2, int3, int1, tipo1));
+			break;
+		case 45:
+			System.out.print(LecturaRango(int2, int3, int1, tipo2));
+			break;
+		case 46:
+			System.out.print(LecturaRango(int2, int3, int1, tipo3));
+			break;
+		case 47:
+			System.out.print(LecturaRango(int2, int3, int1, tipo4));
+			break;
+		case 48:
+			System.out.print(LecturaRango(long2, long3, long1, tipo1));
+			break;
+		case 49:
+			System.out.print(LecturaRango(long2, long3, long1, tipo2));
+			break;
+		case 50:
+			System.out.print(LecturaRango(long2, long3, long1, tipo3));
+			break;
+		case 51:
+			System.out.print(LecturaRango(long2, long3, long1, tipo3));
+			break;
+		case 52:
+			System.out.print(LecturaRango(double2, double3, double1, tipo1));
+			break;
+		case 53:
+			System.out.print(LecturaRango(double2, double3, double1, tipo2));
+			break;
+		case 54:
+			System.out.print(LecturaRango(double2, double3, double1, tipo3));
+			break;
+		case 55:
+			System.out.print(LecturaRango(double2, double3, double1, tipo1));
+			break;
+		case 56:
+			System.out.print(LecturaRango(float2, float3, float1, tipo1));
+			break;
+		case 57:
+			System.out.print(LecturaRango(float2, float3, float1, tipo2));
+			break;
+		case 58:
+			System.out.print(LecturaRango(float2, float3, float1, tipo3));
+			break;
+		case 59:
+			System.out.print(LecturaRango(float2, float3, float1, tipo1));
 			break;
 		}
 
@@ -364,7 +521,7 @@ public class Teclado {
 
 		Boolean correcto = false;
 
-		if (numero == Comparacion.MayorOIgual) {
+		if (numero == Comparacion.MAYOR_O_IGUAL) {
 
 			do {
 				try {
@@ -390,7 +547,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.MenorOIgual) {
+		if (numero == Comparacion.MENOR_O_IGUAL) {
 
 			do {
 				try {
@@ -416,7 +573,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Mayor) {
+		if (numero == Comparacion.MAYOR) {
 
 			do {
 				try {
@@ -442,7 +599,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Menor) {
+		if (numero == Comparacion.MENOR) {
 
 			do {
 				try {
@@ -474,7 +631,7 @@ public class Teclado {
 	public static short LecturaComparacion(short number1, short number2, Comparacion numero) {
 		Boolean correcto = false;
 
-		if (numero == Comparacion.MayorOIgual) {
+		if (numero == Comparacion.MAYOR_O_IGUAL) {
 
 			do {
 				try {
@@ -500,7 +657,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.MenorOIgual) {
+		if (numero == Comparacion.MENOR_O_IGUAL) {
 
 			do {
 				try {
@@ -526,7 +683,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Mayor) {
+		if (numero == Comparacion.MAYOR) {
 
 			do {
 				try {
@@ -552,7 +709,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Menor) {
+		if (numero == Comparacion.MENOR) {
 
 			do {
 				try {
@@ -584,7 +741,7 @@ public class Teclado {
 	public static int LecturaComparacion(int number1, int number2, Comparacion numero) {
 		Boolean correcto = false;
 
-		if (numero == Comparacion.MayorOIgual) {
+		if (numero == Comparacion.MAYOR_O_IGUAL) {
 
 			do {
 				try {
@@ -612,7 +769,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.MenorOIgual) {
+		if (numero == Comparacion.MENOR_O_IGUAL) {
 
 			do {
 				try {
@@ -639,7 +796,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Mayor) {
+		if (numero == Comparacion.MAYOR) {
 
 			do {
 				try {
@@ -668,7 +825,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Menor) {
+		if (numero == Comparacion.MENOR) {
 
 			do {
 				try {
@@ -704,7 +861,7 @@ public class Teclado {
 
 		Boolean correcto = false;
 
-		if (numero == Comparacion.MayorOIgual) {
+		if (numero == Comparacion.MAYOR_O_IGUAL) {
 
 			do {
 				try {
@@ -732,7 +889,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.MenorOIgual) {
+		if (numero == Comparacion.MENOR_O_IGUAL) {
 
 			do {
 				try {
@@ -759,7 +916,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Mayor) {
+		if (numero == Comparacion.MAYOR) {
 
 			do {
 				try {
@@ -788,7 +945,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Menor) {
+		if (numero == Comparacion.MENOR) {
 
 			do {
 				try {
@@ -823,7 +980,7 @@ public class Teclado {
 
 		Boolean correcto = false;
 
-		if (numero == Comparacion.MayorOIgual) {
+		if (numero == Comparacion.MAYOR_O_IGUAL) {
 
 			do {
 				try {
@@ -851,7 +1008,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.MenorOIgual) {
+		if (numero == Comparacion.MENOR_O_IGUAL) {
 
 			do {
 				try {
@@ -878,7 +1035,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Mayor) {
+		if (numero == Comparacion.MAYOR) {
 
 			do {
 				try {
@@ -907,7 +1064,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Menor) {
+		if (numero == Comparacion.MENOR) {
 
 			do {
 				try {
@@ -942,7 +1099,7 @@ public class Teclado {
 
 		Boolean correcto = false;
 
-		if (numero == Comparacion.MayorOIgual) {
+		if (numero == Comparacion.MAYOR_O_IGUAL) {
 
 			do {
 				try {
@@ -970,7 +1127,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.MenorOIgual) {
+		if (numero == Comparacion.MENOR_O_IGUAL) {
 
 			do {
 				try {
@@ -997,7 +1154,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Mayor) {
+		if (numero == Comparacion.MAYOR) {
 
 			do {
 				try {
@@ -1026,7 +1183,7 @@ public class Teclado {
 
 		}
 
-		if (numero == Comparacion.Menor) {
+		if (numero == Comparacion.MENOR) {
 
 			do {
 				try {
@@ -1064,7 +1221,7 @@ public class Teclado {
 		if (menor >= mayor) {
 			throw new IllegalArgumentException("Error en la introducción de las condiciones");
 		} else {
-			if (tipo == Rango.Ambos_Incluidos) {
+			if (tipo == Rango.AMBOS_INCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
@@ -1082,7 +1239,8 @@ public class Teclado {
 
 					}
 				} while (!correcto);
-			} else if (tipo == Rango.Ambos_Excluidos) {
+			} else if (tipo == Rango.AMBOS_EXCLUIDOS) {
+				
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
@@ -1101,7 +1259,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Mínimo_Excluido_Máximo_Inluido) {
+			} else if (tipo == Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
@@ -1120,7 +1278,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Máximo_Excluido_Mínimo_Incluido) {
+			} else if (tipo == Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
@@ -1152,7 +1310,7 @@ public class Teclado {
 		if (menor >= mayor) {
 			throw new IllegalArgumentException("Error en la introducción de las condiciones");
 		} else {
-			if (tipo == Rango.Ambos_Incluidos) {
+			if (tipo == Rango.AMBOS_INCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
@@ -1170,7 +1328,7 @@ public class Teclado {
 
 					}
 				} while (!correcto);
-			} else if (tipo == Rango.Ambos_Excluidos) {
+			} else if (tipo == Rango.AMBOS_EXCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
@@ -1189,7 +1347,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Mínimo_Excluido_Máximo_Inluido) {
+			} else if (tipo == Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
@@ -1208,7 +1366,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Máximo_Excluido_Mínimo_Incluido) {
+			} else if (tipo == Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
@@ -1240,7 +1398,7 @@ public class Teclado {
 		if (menor >= mayor) {
 			throw new IllegalArgumentException("Error en la introducción de las condiciones");
 		} else {
-			if (tipo == Rango.Ambos_Incluidos) {
+			if (tipo == Rango.AMBOS_INCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
@@ -1258,7 +1416,7 @@ public class Teclado {
 
 					}
 				} while (!correcto);
-			} else if (tipo == Rango.Ambos_Excluidos) {
+			} else if (tipo == Rango.AMBOS_EXCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
@@ -1277,7 +1435,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Mínimo_Excluido_Máximo_Inluido) {
+			} else if (tipo == Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
@@ -1296,7 +1454,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Máximo_Excluido_Mínimo_Incluido) {
+			} else if (tipo == Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
@@ -1328,7 +1486,7 @@ public class Teclado {
 		if (menor >= mayor) {
 			throw new IllegalArgumentException("Error en la introducción de las condiciones");
 		} else {
-			if (tipo == Rango.Ambos_Incluidos) {
+			if (tipo == Rango.AMBOS_INCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
@@ -1346,7 +1504,7 @@ public class Teclado {
 
 					}
 				} while (!correcto);
-			} else if (tipo == Rango.Ambos_Excluidos) {
+			} else if (tipo == Rango.AMBOS_EXCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
@@ -1365,7 +1523,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Mínimo_Excluido_Máximo_Inluido) {
+			} else if (tipo == Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
@@ -1384,7 +1542,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Máximo_Excluido_Mínimo_Incluido) {
+			} else if (tipo == Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
@@ -1417,7 +1575,7 @@ public class Teclado {
 		if (menor >= mayor) {
 			throw new IllegalArgumentException("Error en la introducción de las condiciones");
 		} else {
-			if (tipo == Rango.Ambos_Incluidos) {
+			if (tipo == Rango.AMBOS_INCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
@@ -1435,7 +1593,7 @@ public class Teclado {
 
 					}
 				} while (!correcto);
-			} else if (tipo == Rango.Ambos_Excluidos) {
+			} else if (tipo == Rango.AMBOS_EXCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
@@ -1454,7 +1612,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Mínimo_Excluido_Máximo_Inluido) {
+			} else if (tipo == Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
@@ -1473,7 +1631,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Máximo_Excluido_Mínimo_Incluido) {
+			} else if (tipo == Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
@@ -1506,7 +1664,7 @@ public class Teclado {
 		if (menor >= mayor) {
 			throw new IllegalArgumentException("Error en la introducción de las condiciones");
 		} else {
-			if (tipo == Rango.Ambos_Incluidos) {
+			if (tipo == Rango.AMBOS_INCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
@@ -1524,7 +1682,7 @@ public class Teclado {
 
 					}
 				} while (!correcto);
-			} else if (tipo == Rango.Ambos_Excluidos) {
+			} else if (tipo == Rango.AMBOS_EXCLUIDOS) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
@@ -1543,7 +1701,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Mínimo_Excluido_Máximo_Inluido) {
+			} else if (tipo == Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
@@ -1562,7 +1720,7 @@ public class Teclado {
 					}
 				} while (!correcto);
 
-			} else if (tipo == Rango.Máximo_Excluido_Mínimo_Incluido) {
+			} else if (tipo == Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO) {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
