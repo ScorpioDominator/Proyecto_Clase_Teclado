@@ -123,6 +123,7 @@ public class Teclado {
 						+ "2. Menor o igual \n"
 						+ "3. mayor \n"
 						+ "4. menor \n");
+				
 				numeroMenu3=keyboard.nextInt();
 				keyboard.nextLine();
 				
@@ -160,6 +161,7 @@ public class Teclado {
 						+ "2. Menor o igual \n"
 						+ "3. mayor \n"
 						+ "4. menor \n");
+				
 				numeroMenu3=keyboard.nextInt();
 				keyboard.nextLine();
 				
@@ -187,7 +189,407 @@ public class Teclado {
 					System.out.println(LecturaComparacion(short1, short2, numero4));
 					break;
 				}
-	}
+				
+				break;
+				
+				case 3:
+				
+				System.out.print("Inserta el número de la opción que desees \n"
+						+ "1. Meyor o igual \n"
+						+ "2. Menor o igual \n"
+						+ "3. mayor \n"
+						+ "4. menor \n");
+				
+				numeroMenu3=keyboard.nextInt();
+				keyboard.nextLine();
+				
+				switch (numeroMenu3) {
+				
+				case 1:
+					
+					System.out.println(LecturaComparacion(int1, int2, numero1));
+					break;
+				
+				case 2:
+				
+				System.out.println(LecturaComparacion(int1, int2, numero2));
+					break;
+
+				
+				case 3:
+					
+					System.out.println(LecturaComparacion(int1, int2, numero3));
+						break;
+
+					
+				case 4:
+					
+					System.out.println(LecturaComparacion(int1, int2, numero4));
+					break;
+				}
+				
+				break;
+				
+				case 4:
+					
+					System.out.print("Inserta el número de la opción que desees \n"
+							+ "1. Meyor o igual \n"
+							+ "2. Menor o igual \n"
+							+ "3. mayor \n"
+							+ "4. menor \n");
+					
+					numeroMenu3=keyboard.nextInt();
+					keyboard.nextLine();
+					
+					switch (numeroMenu3) {
+					
+					case 1:
+						
+						System.out.println(LecturaComparacion(long1, long2, numero1));
+						break;
+					
+					case 2:
+					
+					System.out.println(LecturaComparacion(long1, long2, numero2));
+						break;
+
+					
+					case 3:
+						
+						System.out.println(LecturaComparacion(long1, long2, numero3));
+							break;
+
+						
+					case 4:
+						
+						System.out.println(LecturaComparacion(long1, long2, numero4));
+						break;
+					}
+					
+					break;
+					
+				case 5:
+					
+					System.out.print("Inserta el número de la opción que desees \n"
+							+ "1. Meyor o igual \n"
+							+ "2. Menor o igual \n"
+							+ "3. mayor \n"
+							+ "4. menor \n");
+					
+					numeroMenu3=keyboard.nextInt();
+					keyboard.nextLine();
+					
+					switch (numeroMenu3) {
+					
+					case 1:
+						
+						System.out.println(LecturaComparacion(float1, float2, numero1));
+						break;
+					
+					case 2:
+					
+					System.out.println(LecturaComparacion(float1, float2, numero2));
+						break;
+
+					
+					case 3:
+						
+						System.out.println(LecturaComparacion(float1, float2, numero3));
+							break;
+
+						
+					case 4:
+						
+						System.out.println(LecturaComparacion(float1, float2, numero4));
+						break;
+					}
+					
+					break;
+					
+				case 6:
+					
+					System.out.print("Inserta el número de la opción que desees \n"
+							+ "1. Meyor o igual \n"
+							+ "2. Menor o igual \n"
+							+ "3. mayor \n"
+							+ "4. menor \n");
+					
+					numeroMenu3=keyboard.nextInt();
+					keyboard.nextLine();
+					
+					switch (numeroMenu3) {
+					
+					case 1:
+						
+						System.out.println(LecturaComparacion(double1, double2, numero1));
+						break;
+					
+					case 2:
+					
+					System.out.println(LecturaComparacion(double1, double2, numero2));
+						break;
+
+					
+					case 3:
+						
+						System.out.println(LecturaComparacion(double1, double2, numero3));
+							break;
+
+						
+					case 4:
+						
+						System.out.println(LecturaComparacion(double1, double2, numero4));
+						break;
+					}
+					
+					break;
+			}
+				case 7:
+					
+					
+					System.out.print("Inserta el número de la opción que desees \n"
+							+ "1. byte \n"
+							+ "2. short \n"
+							+ "3. int \n"
+							+ "4. long \n"
+							+ "5. float \n"
+							+ "6. double \n");
+					
+					numeroMenu2=keyboard.nextInt();
+					keyboard.nextLine();
+					
+					
+					switch (numeroMenu2) {
+					
+					case 1:
+						
+						System.out.print("Inserta el número de la opción que desees \n"
+								+ "1. Ambos incluidos \n"
+								+ "2. Ambos Excluidos \n"
+								+ "3. Mínimo incluido, máximo excluido \n"
+								+ "4. Máximo incluido, mínimo excluido \n");
+						
+						numeroMenu3=keyboard.nextInt();
+						keyboard.nextLine();
+						
+						switch (numeroMenu3) {
+						
+						case 1:
+							
+							System.out.println(LecturaRango(byte2, byte3, byte1, tipo1));
+							break;
+						
+						case 2:
+						
+						System.out.println(LecturaRango(byte2, byte3, byte1, tipo2));
+							break;
+
+						
+						case 3:
+							
+							System.out.println(LecturaRango(byte2, byte3, byte1, tipo3));
+								break;
+
+							
+						case 4:
+							
+							System.out.println(LecturaRango(byte2, byte3, byte1, tipo4));
+							break;
+							
+				}
+						break;
+						
+					case 2:
+						
+						System.out.print("Inserta el número de la opción que desees \n"
+								+ "1. Ambos incluidos \n"
+								+ "2. Ambos Excluidos \n"
+								+ "3. Mínimo incluido, máximo excluido \n"
+								+ "4. Máximo incluido, mínimo excluido \n");
+						
+						numeroMenu3=keyboard.nextInt();
+						keyboard.nextLine();
+						
+						switch (numeroMenu3) {
+						
+						case 1:
+							
+							System.out.println(LecturaRango(short2, short3, short1, tipo1));
+							break;
+						
+						case 2:
+						
+						System.out.println(LecturaRango(short2, short3, short1, tipo2));
+							break;
+
+						
+						case 3:
+							
+							System.out.println(LecturaRango(short2, short3, short1, tipo3));
+								break;
+
+							
+						case 4:
+							
+							System.out.println(LecturaRango(short2, short3, short1, tipo4));
+							break;
+						}
+						
+						break;
+						
+						case 3:
+						
+						System.out.print("Inserta el número de la opción que desees \n"
+								+ "1. Ambos incluidos \n"
+								+ "2. Ambos Excluidos \n"
+								+ "3. Mínimo incluido, máximo excluido \n"
+								+ "4. Máximo incluido, mínimo excluido \n");
+						
+						numeroMenu3=keyboard.nextInt();
+						keyboard.nextLine();
+						
+						switch (numeroMenu3) {
+						
+						case 1:
+							
+							System.out.println(LecturaRango(int2, int3, int1, tipo1));
+							break;
+						
+						case 2:
+						
+						System.out.println(LecturaRango(int2, int3, int1, tipo2));
+							break;
+
+						
+						case 3:
+							
+							System.out.println(LecturaRango(int2, int3, int1, tipo3));
+								break;
+
+							
+						case 4:
+							
+							System.out.println(LecturaRango(int2, int3, int1, tipo4));
+							break;
+						}
+						
+						break;
+						
+						case 4:
+							
+							System.out.print("Inserta el número de la opción que desees \n"
+									+ "1. Ambos incluidos \n"
+									+ "2. Ambos Excluidos \n"
+									+ "3. Mínimo incluido, máximo excluido \n"
+									+ "4. Máximo incluido, mínimo excluido \n");
+							
+							numeroMenu3=keyboard.nextInt();
+							keyboard.nextLine();
+							
+							switch (numeroMenu3) {
+							
+							case 1:
+								
+								System.out.println(LecturaRango(long2, long3, long1, tipo1));
+								break;
+							
+							case 2:
+							
+							System.out.println(LecturaRango(long2, long3, long1, tipo2));
+								break;
+
+							
+							case 3:
+								
+								System.out.println(LecturaRango(long2, long3, long1, tipo3));
+									break;
+
+								
+							case 4:
+								
+								System.out.println(LecturaRango(long2, long3, long1, tipo4));
+								break;
+							}
+							
+							break;
+							
+						case 5:
+							
+							System.out.print("Inserta el número de la opción que desees \n"
+									+ "1. Ambos incluidos \n"
+									+ "2. Ambos Excluidos \n"
+									+ "3. Mínimo incluido, máximo excluido \n"
+									+ "4. Máximo incluido, mínimo excluido \n");
+							
+							numeroMenu3=keyboard.nextInt();
+							keyboard.nextLine();
+							
+							switch (numeroMenu3) {
+							
+							case 1:
+								
+								System.out.println(LecturaRango(float2, float3, float1, tipo1));
+								break;
+							
+							case 2:
+							
+							System.out.println(LecturaRango(float2, float3, float1, tipo2));
+								break;
+
+							
+							case 3:
+								
+								System.out.println(LecturaRango(float2, float3, float1, tipo3));
+									break;
+
+								
+							case 4:
+								
+								System.out.println(LecturaRango(float2, float3, float1, tipo4));
+								break;
+							}
+							
+							break;
+							
+						case 6:
+							
+							System.out.print("Inserta el número de la opción que desees \n"
+									+ "1. Ambos incluidos \n"
+									+ "2. Ambos Excluidos \n"
+									+ "3. Mínimo incluido, máximo excluido \n"
+									+ "4. Máximo incluido, mínimo excluido \n");
+							
+							numeroMenu3=keyboard.nextInt();
+							keyboard.nextLine();
+							
+							switch (numeroMenu3) {
+							
+							case 1:
+								
+								System.out.println(LecturaRango(double2, double3, double1, tipo1));
+								break;
+							
+							case 2:
+							
+							System.out.println(LecturaRango(double2, double3, double1, tipo2));
+								break;
+
+							
+							case 3:
+								
+								System.out.println(LecturaRango(double2, double3, double1, tipo3));
+									break;
+
+								
+							case 4:
+								
+								System.out.println(LecturaRango(double2, double3, double1, tipo4));
+								break;
+							}
+							
+							break;
+					}
+	
 		}
 			
 		
@@ -1401,7 +1803,7 @@ public class Teclado {
 			if (tipo == Rango.AMBOS_INCLUIDOS) {
 				do {
 					try {
-						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
+						System.out.printf("Escribe un número entre %f y %f estos incluidos %n", menor, mayor);
 						number = LecturaNumero(number);
 
 						if (number >= menor && number <= mayor) {
@@ -1419,7 +1821,7 @@ public class Teclado {
 			} else if (tipo == Rango.AMBOS_EXCLUIDOS) {
 				do {
 					try {
-						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
+						System.out.printf("Escribe un número entre %f y %f sin incluirlos %n", menor, mayor);
 						number = LecturaNumero(number);
 
 						if (number > menor && number < mayor) {
@@ -1438,7 +1840,7 @@ public class Teclado {
 			} else if (tipo == Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO) {
 				do {
 					try {
-						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
+						System.out.printf("Escribe un número entre %f y %f excluyendo el menor %n", menor, mayor);
 						number = LecturaNumero(number);
 
 						if (number > menor && number <= mayor) {
@@ -1457,7 +1859,7 @@ public class Teclado {
 			} else if (tipo == Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO) {
 				do {
 					try {
-						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
+						System.out.printf("Escribe un número entre %f y %f excluyendo el mayor %n", menor, mayor);
 						number = LecturaNumero(number);
 
 						if (number >= menor && number < mayor) {
@@ -1579,7 +1981,7 @@ public class Teclado {
 			if (tipo == Rango.AMBOS_INCLUIDOS) {
 				do {
 					try {
-						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
+						System.out.printf("Escribe un número entre %f y %f estos incluidos %n", menor, mayor);
 						number = LecturaNumero(number);
 
 						if (number >= menor && number <= mayor) {
@@ -1597,7 +1999,7 @@ public class Teclado {
 			} else if (tipo == Rango.AMBOS_EXCLUIDOS) {
 				do {
 					try {
-						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
+						System.out.printf("Escribe un número entre %f y %f sin incluirlos %n", menor, mayor);
 						number = LecturaNumero(number);
 
 						if (number > menor && number < mayor) {
@@ -1616,7 +2018,7 @@ public class Teclado {
 			} else if (tipo == Rango.MÍNIMO_EXCLUIDO_MÁXIMO_INCLUIDO) {
 				do {
 					try {
-						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
+						System.out.printf("Escribe un número entre %f y %f excluyendo el menor %n", menor, mayor);
 						number = LecturaNumero(number);
 
 						if (number > menor && number <= mayor) {
@@ -1635,7 +2037,7 @@ public class Teclado {
 			} else if (tipo == Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO) {
 				do {
 					try {
-						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
+						System.out.printf("Escribe un número entre %f y %f excluyendo el mayor %n", menor, mayor);
 						number = LecturaNumero(number);
 
 						if (number >= menor && number < mayor) {
