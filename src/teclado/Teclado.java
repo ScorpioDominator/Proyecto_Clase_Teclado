@@ -21,6 +21,7 @@ public class Teclado {
 				tipo4=Rango.MÁXIMO_EXCLUIDO_MÍNIMO_INCLUIDO;
 		Comparacion numero1 = Comparacion.MAYOR_O_IGUAL, numero2=Comparacion.MENOR_O_IGUAL, numero3=Comparacion.MAYOR, 
 				numero4=Comparacion.MENOR;
+		boolean salir1=false, salir2=false, salir3=false;
 		byte byte1 = 0, byte2 = 20, byte3 = 30;
 		short short1 = 0, short2 = 20, short3 = 30;
 		int numeroMenu, numeroMenu2, numeroMenu3, int1 = 0, int2 = 20, int3 = 30;
@@ -29,30 +30,37 @@ public class Teclado {
 		float float1 = 0, float2 = 20, float3 = 30;
 		char charKey = ' ';
 		String stringKey = " ", Elección = "Elige color", Opción1 = "1.1 Rojo", Opción2 = "1.2 Verde",
-				pregunta = "¿Estas casado?";
+				pregunta = "¿Estas casado?", mensajeC="Introduce un carácter", mensajeS="Introduce una cadena",
+				mensajeN="Introduce un número";
 
-		System.out.print("Pulsa uno de los siguientes números para elegir la opción que quieres: \n"
-				+ "1. Para un carácter \n"
-				+ "2. Para una cadena \n"
-				+ "3. Para el primer boolean \n"
-				+ "4. Para el segundo boolean \n"
-				+ "5. Para un número \n"
-				+ "6. Para una comparación \n"
-				+ "7. Para un rango \n"
-				+ "8. Para cerrar teclado \n"
-				+ "9. Para salir \n");
+
 		
-		numeroMenu=keyboard.nextInt();
-		keyboard.nextLine();
+		do {
+			
+			System.out.print("Pulsa uno de los siguientes números para elegir la opción que quieres: \n"
+					+ "1. Para un carácter \n"
+					+ "2. Para una cadena \n"
+					+ "3. Para el primer boolean \n"
+					+ "4. Para el segundo boolean \n"
+					+ "5. Para un número \n"
+					+ "6. Para una comparación \n"
+					+ "7. Para un rango \n"
+					+ "8. Para cerrar teclado \n"
+					+ "9. Para salir \n");
+			
+			numeroMenu=keyboard.nextInt();
+			keyboard.nextLine();
+		
+		
 		
 		switch (numeroMenu) {
 		
 		case 1: 
-		System.out.println(LecturaChar(charKey));
+		System.out.println(LecturaChar(charKey, mensajeC));
 		break;
 		
 		case 2: 
-		System.out.println(LecturaString(stringKey));
+		System.out.println(LecturaString(stringKey, mensajeS));
 		break;
 		
 		case 3:
@@ -61,8 +69,11 @@ public class Teclado {
 		
 		case 4:
 		System.out.println(LecturaBoolean(pregunta));
+		break;
 		
 		case 5:
+			
+			do {
 			
 			System.out.print("Inserta el número de la opción que desees \n"
 					+ "1. byte \n"
@@ -79,28 +90,39 @@ public class Teclado {
 		
 		switch (numeroMenu2) {
 		case 1:
-			System.out.println(LecturaNumero(byte1));
+			System.out.println(LecturaNumero(byte1, mensajeN));
+			salir2=true;
 			break;
 		case 2:
-			System.out.println(LecturaNumero(short1));
+			System.out.println(LecturaNumero(short1, mensajeN));
+			salir2=true;
 			break;
 		case 3:
-			System.out.println(LecturaNumero(int1));
+			System.out.println(LecturaNumero(int1, mensajeN));
+			salir2=true;
 			break;
 		case 4:
-			System.out.println(LecturaNumero(long1));
+			System.out.println(LecturaNumero(long1, mensajeN));
+			salir2=true;
 			break;
 		case 5:
-			System.out.println(LecturaNumero(float1));
+			System.out.println(LecturaNumero(float1, mensajeN));
+			salir2=true;
 			break;
 		case 6:
-			System.out.println(LecturaNumero(double1));
+			System.out.println(LecturaNumero(double1, mensajeN));
+			salir2=true;
 			break;
 		}
+			}
+			while (!salir2);
+			salir2=false;
 		break;
 		
 		case 6:
-		
+			
+			
+		do {
 			
 			System.out.print("Inserta el número de la opción que desees \n"
 					+ "1. byte \n"
@@ -118,6 +140,8 @@ public class Teclado {
 			
 			case 1:
 				
+				do {
+				
 				System.out.print("Inserta el número de la opción que desees \n"
 						+ "1. Meyor o igual \n"
 						+ "2. Menor o igual \n"
@@ -131,68 +155,41 @@ public class Teclado {
 				
 				case 1:
 					
-					System.out.println(LecturaComparacion(byte1, byte2, numero1));
+					System.out.println(LecturaComparacion(byte1, byte2, numero1, mensajeN));
+					salir3=true;
 					break;
 				
 				case 2:
 				
-				System.out.println(LecturaComparacion(byte1, byte2, numero2));
+				System.out.println(LecturaComparacion(byte1, byte2, numero2, mensajeN));
+				salir3=true;
 					break;
 
 				
 				case 3:
 					
-					System.out.println(LecturaComparacion(byte1, byte2, numero3));
+					System.out.println(LecturaComparacion(byte1, byte2, numero3, mensajeN));
+					salir3=true;
 						break;
 
 					
 				case 4:
 					
-					System.out.println(LecturaComparacion(byte1, byte2, numero4));
+					System.out.println(LecturaComparacion(byte1, byte2, numero4, mensajeN));
+					salir3=true;
 					break;
-					
-		}
+				}
+				
+			}
+				while(!salir3);
+				salir2=true;
+				salir3=false;
 				break;
+				
 				
 			case 2:
 				
-				System.out.print("Inserta el número de la opción que desees \n"
-						+ "1. Meyor o igual \n"
-						+ "2. Menor o igual \n"
-						+ "3. mayor \n"
-						+ "4. menor \n");
-				
-				numeroMenu3=keyboard.nextInt();
-				keyboard.nextLine();
-				
-				switch (numeroMenu3) {
-				
-				case 1:
-					
-					System.out.println(LecturaComparacion(short1, short2, numero1));
-					break;
-				
-				case 2:
-				
-				System.out.println(LecturaComparacion(short1, short2, numero2));
-					break;
-
-				
-				case 3:
-					
-					System.out.println(LecturaComparacion(short1, short2, numero3));
-						break;
-
-					
-				case 4:
-					
-					System.out.println(LecturaComparacion(short1, short2, numero4));
-					break;
-				}
-				
-				break;
-				
-				case 3:
+				do {
 				
 				System.out.print("Inserta el número de la opción que desees \n"
 						+ "1. Meyor o igual \n"
@@ -207,30 +204,88 @@ public class Teclado {
 				
 				case 1:
 					
-					System.out.println(LecturaComparacion(int1, int2, numero1));
+					System.out.println(LecturaComparacion(short1, short2, numero1, mensajeN));
+					salir3=true;
 					break;
 				
 				case 2:
 				
-				System.out.println(LecturaComparacion(int1, int2, numero2));
+				System.out.println(LecturaComparacion(short1, short2, numero2, mensajeN));
+				salir3=true;
 					break;
 
 				
 				case 3:
 					
-					System.out.println(LecturaComparacion(int1, int2, numero3));
+					System.out.println(LecturaComparacion(short1, short2, numero3, mensajeN));
+					salir3=true;
 						break;
 
 					
 				case 4:
 					
-					System.out.println(LecturaComparacion(int1, int2, numero4));
+					System.out.println(LecturaComparacion(short1, short2, numero4, mensajeN));
+					salir3=true;
 					break;
 				}
+				}
+				while(!salir3);
+				salir2=true;
+				salir3=false;
+				break;
 				
+				case 3:
+					
+					do {
+				
+				System.out.print("Inserta el número de la opción que desees \n"
+						+ "1. Meyor o igual \n"
+						+ "2. Menor o igual \n"
+						+ "3. mayor \n"
+						+ "4. menor \n");
+				
+				numeroMenu3=keyboard.nextInt();
+				keyboard.nextLine();
+				
+				switch (numeroMenu3) {
+				
+				
+				case 1:
+					
+					System.out.println(LecturaComparacion(int1, int2, numero1, mensajeN));
+					salir3=true;
+					break;
+				
+				case 2:
+				
+				System.out.println(LecturaComparacion(int1, int2, numero2, mensajeN));
+				salir3=true;
+					break;
+
+				
+				case 3:
+					
+					System.out.println(LecturaComparacion(int1, int2, numero3, mensajeN));
+					salir3=true;
+						break;
+
+					
+				case 4:
+					
+					System.out.println(LecturaComparacion(int1, int2, numero4, mensajeN));
+					salir3=true;
+					break;
+				}
+					}
+					
+				while (!salir3);
+				salir2=true;
+				salir3=false;
 				break;
 				
 				case 4:
+					
+					do {
 					
 					System.out.print("Inserta el número de la opción que desees \n"
 							+ "1. Meyor o igual \n"
@@ -245,31 +300,36 @@ public class Teclado {
 					
 					case 1:
 						
-						System.out.println(LecturaComparacion(long1, long2, numero1));
+						System.out.println(LecturaComparacion(long1, long2, numero1, mensajeN));
 						break;
 					
 					case 2:
 					
-					System.out.println(LecturaComparacion(long1, long2, numero2));
+					System.out.println(LecturaComparacion(long1, long2, numero2, mensajeN));
 						break;
 
 					
 					case 3:
 						
-						System.out.println(LecturaComparacion(long1, long2, numero3));
+						System.out.println(LecturaComparacion(long1, long2, numero3, mensajeN));
 							break;
 
 						
 					case 4:
 						
-						System.out.println(LecturaComparacion(long1, long2, numero4));
+						System.out.println(LecturaComparacion(long1, long2, numero4, mensajeN));
 						break;
 					}
-					
+					}
+					while(!salir3);
+					salir2=true;
+					salir3=false;
 					break;
 					
 				case 5:
 					
+					do {
+					
 					System.out.print("Inserta el número de la opción que desees \n"
 							+ "1. Meyor o igual \n"
 							+ "2. Menor o igual \n"
@@ -283,31 +343,40 @@ public class Teclado {
 					
 					case 1:
 						
-						System.out.println(LecturaComparacion(float1, float2, numero1));
+						System.out.println(LecturaComparacion(float1, float2, numero1, mensajeN));
+						salir3=true;
 						break;
 					
 					case 2:
 					
-					System.out.println(LecturaComparacion(float1, float2, numero2));
+					System.out.println(LecturaComparacion(float1, float2, numero2, mensajeN));
+					salir3=true;
 						break;
 
 					
 					case 3:
 						
-						System.out.println(LecturaComparacion(float1, float2, numero3));
+						System.out.println(LecturaComparacion(float1, float2, numero3, mensajeN));
+						salir3=true;
 							break;
 
 						
 					case 4:
 						
-						System.out.println(LecturaComparacion(float1, float2, numero4));
+						System.out.println(LecturaComparacion(float1, float2, numero4, mensajeN));
+						salir3=true;
 						break;
 					}
 					
+					} while (!salir3);
+					salir2=true;
+					salir3=false;
 					break;
 					
 				case 6:
 					
+					do {
+					
 					System.out.print("Inserta el número de la opción que desees \n"
 							+ "1. Meyor o igual \n"
 							+ "2. Menor o igual \n"
@@ -321,30 +390,40 @@ public class Teclado {
 					
 					case 1:
 						
-						System.out.println(LecturaComparacion(double1, double2, numero1));
+						System.out.println(LecturaComparacion(double1, double2, numero1, mensajeN));
 						break;
 					
 					case 2:
 					
-					System.out.println(LecturaComparacion(double1, double2, numero2));
+					System.out.println(LecturaComparacion(double1, double2, numero2, mensajeN));
 						break;
 
 					
 					case 3:
 						
-						System.out.println(LecturaComparacion(double1, double2, numero3));
+						System.out.println(LecturaComparacion(double1, double2, numero3, mensajeN));
 							break;
 
 						
 					case 4:
 						
-						System.out.println(LecturaComparacion(double1, double2, numero4));
+						System.out.println(LecturaComparacion(double1, double2, numero4, mensajeN));
 						break;
 					}
-					
+					}
+					while (!salir3);
+					salir2=true;
+					salir3=false;
 					break;
 			}
+		}
+		while(!salir2);
+		salir2=false;
+		break;
+		
 				case 7:
+					
+					do {
 					
 					
 					System.out.print("Inserta el número de la opción que desees \n"
@@ -363,6 +442,8 @@ public class Teclado {
 					
 					case 1:
 						
+						do {
+						
 						System.out.print("Inserta el número de la opción que desees \n"
 								+ "1. Ambos incluidos \n"
 								+ "2. Ambos Excluidos \n"
@@ -376,68 +457,40 @@ public class Teclado {
 						
 						case 1:
 							
-							System.out.println(LecturaRango(byte2, byte3, byte1, tipo1));
+							System.out.println(LecturaRango(byte2, byte3, byte1, tipo1, mensajeN));
+							salir3=true;
 							break;
 						
 						case 2:
 						
-						System.out.println(LecturaRango(byte2, byte3, byte1, tipo2));
+						System.out.println(LecturaRango(byte2, byte3, byte1, tipo2, mensajeN));
+						salir3=true;
 							break;
 
 						
 						case 3:
 							
-							System.out.println(LecturaRango(byte2, byte3, byte1, tipo3));
+							System.out.println(LecturaRango(byte2, byte3, byte1, tipo3, mensajeN));
+							salir3=true;
 								break;
 
 							
 						case 4:
 							
-							System.out.println(LecturaRango(byte2, byte3, byte1, tipo4));
+							System.out.println(LecturaRango(byte2, byte3, byte1, tipo4, mensajeN));
+							salir3=true;
 							break;
 							
 				}
+						}
+						while (!salir3);
+						salir2=true;
+						salir3=false;
 						break;
 						
 					case 2:
 						
-						System.out.print("Inserta el número de la opción que desees \n"
-								+ "1. Ambos incluidos \n"
-								+ "2. Ambos Excluidos \n"
-								+ "3. Mínimo incluido, máximo excluido \n"
-								+ "4. Máximo incluido, mínimo excluido \n");
-						
-						numeroMenu3=keyboard.nextInt();
-						keyboard.nextLine();
-						
-						switch (numeroMenu3) {
-						
-						case 1:
-							
-							System.out.println(LecturaRango(short2, short3, short1, tipo1));
-							break;
-						
-						case 2:
-						
-						System.out.println(LecturaRango(short2, short3, short1, tipo2));
-							break;
-
-						
-						case 3:
-							
-							System.out.println(LecturaRango(short2, short3, short1, tipo3));
-								break;
-
-							
-						case 4:
-							
-							System.out.println(LecturaRango(short2, short3, short1, tipo4));
-							break;
-						}
-						
-						break;
-						
-						case 3:
+						do {
 						
 						System.out.print("Inserta el número de la opción que desees \n"
 								+ "1. Ambos incluidos \n"
@@ -452,30 +505,87 @@ public class Teclado {
 						
 						case 1:
 							
-							System.out.println(LecturaRango(int2, int3, int1, tipo1));
+							System.out.println(LecturaRango(short2, short3, short1, tipo1, mensajeN));
+							salir3=true;
 							break;
 						
 						case 2:
 						
-						System.out.println(LecturaRango(int2, int3, int1, tipo2));
+						System.out.println(LecturaRango(short2, short3, short1, tipo2, mensajeN));
+						salir3=true;
 							break;
 
 						
 						case 3:
 							
-							System.out.println(LecturaRango(int2, int3, int1, tipo3));
+							System.out.println(LecturaRango(short2, short3, short1, tipo3, mensajeN));
+							salir3=true;
 								break;
 
 							
 						case 4:
 							
-							System.out.println(LecturaRango(int2, int3, int1, tipo4));
+							System.out.println(LecturaRango(short2, short3, short1, tipo4, mensajeN));
+							salir3=true;
 							break;
 						}
+						}
+						while (!salir3);
+						salir2=true;
+						salir3=false;
+						break;
+						
+						case 3:
+							
+							do {
+						
+						System.out.print("Inserta el número de la opción que desees \n"
+								+ "1. Ambos incluidos \n"
+								+ "2. Ambos Excluidos \n"
+								+ "3. Mínimo incluido, máximo excluido \n"
+								+ "4. Máximo incluido, mínimo excluido \n");
+						
+						numeroMenu3=keyboard.nextInt();
+						keyboard.nextLine();
+						
+						switch (numeroMenu3) {
+						
+						case 1:
+							
+							System.out.println(LecturaRango(int2, int3, int1, tipo1, mensajeN));
+							salir3=true;
+							break;
+						
+						case 2:
+						
+						System.out.println(LecturaRango(int2, int3, int1, tipo2, mensajeN));
+						salir3=true;
+							break;
+
+						
+						case 3:
+							
+							System.out.println(LecturaRango(int2, int3, int1, tipo3, mensajeN));
+							salir3=true;
+								break;
+
+							
+						case 4:
+							
+							System.out.println(LecturaRango(int2, int3, int1, tipo4, mensajeN));
+							salir3=true;
+							break;
+						}
+							}
+							while(!salir3);
+							salir2=true;
+							salir3=false;
 						
 						break;
 						
 						case 4:
+							
+							do {
 							
 							System.out.print("Inserta el número de la opción que desees \n"
 									+ "1. Ambos incluidos \n"
@@ -490,31 +600,41 @@ public class Teclado {
 							
 							case 1:
 								
-								System.out.println(LecturaRango(long2, long3, long1, tipo1));
+								System.out.println(LecturaRango(long2, long3, long1, tipo1, mensajeN));
+								salir3=true;
 								break;
 							
 							case 2:
 							
-							System.out.println(LecturaRango(long2, long3, long1, tipo2));
+							System.out.println(LecturaRango(long2, long3, long1, tipo2, mensajeN));
+							salir3=true;
 								break;
 
 							
 							case 3:
 								
-								System.out.println(LecturaRango(long2, long3, long1, tipo3));
+								System.out.println(LecturaRango(long2, long3, long1, tipo3, mensajeN));
+								salir3=true;
 									break;
 
 								
 							case 4:
 								
-								System.out.println(LecturaRango(long2, long3, long1, tipo4));
+								System.out.println(LecturaRango(long2, long3, long1, tipo4, mensajeN));
+								salir3=true;
 								break;
 							}
+							}
+							while(!salir3);
+							salir2=true;
+							salir3=false;
 							
 							break;
 							
 						case 5:
 							
+							do {
+							
 							System.out.print("Inserta el número de la opción que desees \n"
 									+ "1. Ambos incluidos \n"
 									+ "2. Ambos Excluidos \n"
@@ -528,31 +648,41 @@ public class Teclado {
 							
 							case 1:
 								
-								System.out.println(LecturaRango(float2, float3, float1, tipo1));
+								System.out.println(LecturaRango(float2, float3, float1, tipo1, mensajeN));
+								salir3=true;
 								break;
 							
 							case 2:
 							
-							System.out.println(LecturaRango(float2, float3, float1, tipo2));
+							System.out.println(LecturaRango(float2, float3, float1, tipo2, mensajeN));
+							salir3=true;
 								break;
 
 							
 							case 3:
 								
-								System.out.println(LecturaRango(float2, float3, float1, tipo3));
+								System.out.println(LecturaRango(float2, float3, float1, tipo3, mensajeN));
+								salir3=true;
 									break;
 
 								
 							case 4:
 								
-								System.out.println(LecturaRango(float2, float3, float1, tipo4));
+								System.out.println(LecturaRango(float2, float3, float1, tipo4, mensajeN));
+								salir3=true;
 								break;
 							}
+							}
+							while(!salir3);
+								salir2=true;
+							salir3=false;
 							
 							break;
 							
 						case 6:
 							
+							do {
+							
 							System.out.print("Inserta el número de la opción que desees \n"
 									+ "1. Ambos incluidos \n"
 									+ "2. Ambos Excluidos \n"
@@ -566,32 +696,53 @@ public class Teclado {
 							
 							case 1:
 								
-								System.out.println(LecturaRango(double2, double3, double1, tipo1));
+								System.out.println(LecturaRango(double2, double3, double1, tipo1, mensajeN));
 								break;
 							
 							case 2:
 							
-							System.out.println(LecturaRango(double2, double3, double1, tipo2));
+							System.out.println(LecturaRango(double2, double3, double1, tipo2, mensajeN));
 								break;
 
 							
 							case 3:
 								
-								System.out.println(LecturaRango(double2, double3, double1, tipo3));
+								System.out.println(LecturaRango(double2, double3, double1, tipo3, mensajeN));
 									break;
 
 								
 							case 4:
 								
-								System.out.println(LecturaRango(double2, double3, double1, tipo4));
+								System.out.println(LecturaRango(double2, double3, double1, tipo4, mensajeN));
 								break;
 							}
-							
+							}
+							while(!salir3);
+							salir2=true;
+							salir3=false;
 							break;
 					}
+					}
+					while(!salir2);
+					salir2=false;
+					break;
+					
+				case 8:
+					
+					KeyboardClose();
+					salir1=true;
+				break;
+				
+				case 9:
+					salir1=true;
+					numeroMenu=0;
+					break;
+					
+		
 	
 		}
-			
+		} while (!salir1);
+		salir1=false;
 		
 	}
 
@@ -601,17 +752,17 @@ public class Teclado {
 		System.out.println("Teclado cerrado");
 	}
 
-	public static char LecturaChar(char charKey) {
+	public static char LecturaChar(char charKey, String MensajeC) {
 		boolean correcto = false;
 		String cadena = " ";
 
 		do {
 			try {
-				System.out.println("Introduce un carácter");
+				System.out.println(MensajeC);
 				cadena = keyboard.nextLine();
 
 				if (cadena.length() > 1) {
-					throw new ArithmeticException("Error en la introducción del número");
+					throw new ArithmeticException("Error en la introducción del carácter");
 				}
 
 				else {
@@ -626,14 +777,31 @@ public class Teclado {
 		return charKey;
 	}
 
-	public static String LecturaString(String stringKey) {
-		System.out.println("Introduce una cadena");
+	public static String LecturaString(String stringKey, String mensajeS) {
+	
+		boolean correcto=false;
+		
+		do {
+		try {
+		System.out.println(mensajeS);
 		stringKey = keyboard.nextLine();
+		if (stringKey.length() < 1) {
+			throw new ArithmeticException("Error en la introducción de la cadena");
+		}
+		else {correcto=true;}
+		}
+		
+		catch (ArithmeticException e) {
+			System.out.println(e.getMessage());
+		}
+		}
+		while (!correcto);
 		return stringKey;
+		
 	}
 
 	public static boolean LecturaBoolean(String elección, String Opción1, String Opción2) {
-		boolean resultado = false;
+		boolean resultado = false, correcto=false;
 		int number = 0;
 
 		do {
@@ -646,15 +814,22 @@ public class Teclado {
 
 				if (number == 1) {
 					resultado = true;
+					correcto=true;
 				} else if (number == 2) {
 					resultado = false;
+					correcto=true;
 				} else {
 					throw new ArithmeticException("Error en la introducción del número");
 				}
 			} catch (ArithmeticException e) {
 				System.out.println(e.getMessage());
 			}
-		} while (number != 1 && number != 2);
+			catch (InputMismatchException e) {
+				System.out.println("Error en la introducción del número");
+				keyboard.nextLine();
+			}
+		
+		} while (number != 1 && number != 2 && correcto==false);
 
 		return resultado;
 	}
@@ -677,17 +852,18 @@ public class Teclado {
 			} catch (ArithmeticException e) {
 				System.out.println(e.getMessage());
 			}
+			
 		} while (!caracter.equals("s") && !caracter.equals("S") && !caracter.equals("N") && !caracter.equals("n"));
 
 		return resultado;
 	}
 
-	public static byte LecturaNumero(byte number) {
+	public static byte LecturaNumero(byte number, String mensajeN) {
 		boolean correcto = false;
 
 		do {
 			try {
-				System.out.println("Introduce un número");
+				System.out.println(mensajeN);
 				number = keyboard.nextByte();
 				correcto = true;
 
@@ -706,13 +882,13 @@ public class Teclado {
 		return number;
 	}
 
-	public static short LecturaNumero(short number) {
+	public static short LecturaNumero(short number, String mensajeN) {
 
 		boolean correcto = false;
 
 		do {
 			try {
-				System.out.println("Introduce un número");
+				System.out.println(mensajeN);
 				number = keyboard.nextShort();
 				correcto = true;
 
@@ -731,13 +907,13 @@ public class Teclado {
 		return number;
 	}
 
-	public static int LecturaNumero(int number) {
+	public static int LecturaNumero(int number, String mensajeN) {
 
 		boolean correcto = false;
 
 		do {
 			try {
-				System.out.println("Introduce un número");
+				System.out.println(mensajeN);
 				number = keyboard.nextInt();
 				correcto = true;
 
@@ -756,13 +932,13 @@ public class Teclado {
 		return number;
 	}
 
-	public static double LecturaNumero(double number) {
+	public static double LecturaNumero(double number, String mensajeN) {
 
 		boolean correcto = false;
 
 		do {
 			try {
-				System.out.println("Introduce un número");
+				System.out.println(mensajeN);
 				number = keyboard.nextDouble();
 				correcto = true;
 
@@ -781,13 +957,13 @@ public class Teclado {
 		return number;
 	}
 
-	public static long LecturaNumero(long number) {
+	public static long LecturaNumero(long number, String mensajeN) {
 
 		boolean correcto = false;
 
 		do {
 			try {
-				System.out.println("Introduce un número");
+				System.out.println(mensajeN);
 				number = keyboard.nextLong();
 				correcto = true;
 
@@ -806,13 +982,13 @@ public class Teclado {
 		return number;
 	}
 
-	public static float LecturaNumero(float number) {
+	public static float LecturaNumero(float number, String mensajeN) {
 
 		boolean correcto = false;
 
 		do {
 			try {
-				System.out.println("Introduce un número");
+				System.out.println(mensajeN);
 				number = keyboard.nextFloat();
 				correcto = true;
 
@@ -831,7 +1007,7 @@ public class Teclado {
 		return number;
 	}
 
-	public static byte LecturaComparacion(byte number1, byte number2, Comparacion numero) {
+	public static byte LecturaComparacion(byte number1, byte number2, Comparacion numero, String mensajeN) {
 
 		Boolean correcto = false;
 
@@ -840,7 +1016,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number1 < number2) {
 						throw new ArithmeticException("Error en la introducción del número");
@@ -866,7 +1042,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number1 > number2) {
 						throw new ArithmeticException("Error en la introducción del número");
@@ -892,7 +1068,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1,mensajeN);
 
 					if (number1 < number2 + 1) {
 						throw new ArithmeticException("Error en la introducción del número");
@@ -918,7 +1094,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number1 > number2 - 1) {
 						throw new ArithmeticException("Error en la introducción del número");
@@ -942,7 +1118,7 @@ public class Teclado {
 		return number1;
 	}
 
-	public static short LecturaComparacion(short number1, short number2, Comparacion numero) {
+	public static short LecturaComparacion(short number1, short number2, Comparacion numero, String mensajeN) {
 		Boolean correcto = false;
 
 		if (numero == Comparacion.MAYOR_O_IGUAL) {
@@ -950,7 +1126,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number1 < number2) {
 						throw new ArithmeticException("Error en la introducción del número");
@@ -976,7 +1152,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number1 > number2) {
 						throw new ArithmeticException("Error en la introducción del número");
@@ -1002,7 +1178,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number1 < number2 + 1) {
 						throw new ArithmeticException("Error en la introducción del número");
@@ -1028,7 +1204,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number1 > number2 - 1) {
 						throw new ArithmeticException("Error en la introducción del número");
@@ -1052,7 +1228,7 @@ public class Teclado {
 		return number1;
 	}
 
-	public static int LecturaComparacion(int number1, int number2, Comparacion numero) {
+	public static int LecturaComparacion(int number1, int number2, Comparacion numero, String mensajeN) {
 		Boolean correcto = false;
 
 		if (numero == Comparacion.MAYOR_O_IGUAL) {
@@ -1060,7 +1236,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 <= number1) {
 						correcto = true;
@@ -1088,7 +1264,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 >= number1) {
 						correcto = true;
@@ -1115,7 +1291,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 < number1) {
 
@@ -1144,7 +1320,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 > number1) {
 
@@ -1171,7 +1347,7 @@ public class Teclado {
 
 	}
 
-	public static double LecturaComparacion(double number1, double number2, Comparacion numero) {
+	public static double LecturaComparacion(double number1, double number2, Comparacion numero, String mensajeN) {
 
 		Boolean correcto = false;
 
@@ -1180,7 +1356,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 <= number1) {
 						correcto = true;
@@ -1208,7 +1384,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 >= number1) {
 						correcto = true;
@@ -1235,7 +1411,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 < number1) {
 
@@ -1264,7 +1440,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 > number1) {
 
@@ -1290,7 +1466,7 @@ public class Teclado {
 		return number1;
 	}
 
-	public static long LecturaComparacion(long number1, long number2, Comparacion numero) {
+	public static long LecturaComparacion(long number1, long number2, Comparacion numero, String mensajeN) {
 
 		Boolean correcto = false;
 
@@ -1299,7 +1475,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 <= number1) {
 						correcto = true;
@@ -1327,7 +1503,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 >= number1) {
 						correcto = true;
@@ -1354,7 +1530,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 < number1) {
 
@@ -1383,7 +1559,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 > number1) {
 
@@ -1409,7 +1585,7 @@ public class Teclado {
 		return number1;
 	}
 
-	public static float LecturaComparacion(float number1, float number2, Comparacion numero) {
+	public static float LecturaComparacion(float number1, float number2, Comparacion numero, String mensajeN) {
 
 		Boolean correcto = false;
 
@@ -1418,7 +1594,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 <= number1) {
 						correcto = true;
@@ -1446,7 +1622,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor o igual a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 >= number1) {
 						correcto = true;
@@ -1473,7 +1649,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número mayor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 < number1) {
 
@@ -1502,7 +1678,7 @@ public class Teclado {
 			do {
 				try {
 					System.out.println("Tienes que introducir un número menor a: " + number2);
-					number1 = LecturaNumero(number1);
+					number1 = LecturaNumero(number1, mensajeN);
 
 					if (number2 > number1) {
 
@@ -1528,7 +1704,7 @@ public class Teclado {
 		return number1;
 	}
 
-	public static byte LecturaRango(byte menor, byte mayor, byte number, Rango tipo) {
+	public static byte LecturaRango(byte menor, byte mayor, byte number, Rango tipo, String mensajeN) {
 
 		boolean correcto = false;
 
@@ -1539,7 +1715,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number <= mayor) {
 							correcto = true;
@@ -1558,7 +1734,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number < mayor) {
 							correcto = true;
@@ -1577,7 +1753,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number <= mayor) {
 							correcto = true;
@@ -1596,7 +1772,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number < mayor) {
 							correcto = true;
@@ -1617,7 +1793,7 @@ public class Teclado {
 		return number;
 	}
 
-	public static short LecturaRango(short menor, short mayor, short number, Rango tipo) {
+	public static short LecturaRango(short menor, short mayor, short number, Rango tipo, String mensajeN) {
 
 		boolean correcto = false;
 
@@ -1628,7 +1804,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number <= mayor) {
 							correcto = true;
@@ -1646,7 +1822,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number < mayor) {
 							correcto = true;
@@ -1665,7 +1841,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number <= mayor) {
 							correcto = true;
@@ -1684,7 +1860,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number < mayor) {
 							correcto = true;
@@ -1705,7 +1881,7 @@ public class Teclado {
 		return number;
 	}
 
-	public static int LecturaRango(int menor, int mayor, int number, Rango tipo) {
+	public static int LecturaRango(int menor, int mayor, int number, Rango tipo, String mensajeN) {
 
 		boolean correcto = false;
 
@@ -1716,7 +1892,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number <= mayor) {
 							correcto = true;
@@ -1734,7 +1910,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number < mayor) {
 							correcto = true;
@@ -1753,7 +1929,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number <= mayor) {
 							correcto = true;
@@ -1772,7 +1948,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number < mayor) {
 							correcto = true;
@@ -1793,7 +1969,7 @@ public class Teclado {
 
 	}
 
-	public static double LecturaRango(double menor, double mayor, double number, Rango tipo) {
+	public static double LecturaRango(double menor, double mayor, double number, Rango tipo, String mensajeN) {
 
 		boolean correcto = false;
 
@@ -1804,7 +1980,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %f y %f estos incluidos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number <= mayor) {
 							correcto = true;
@@ -1822,7 +1998,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %f y %f sin incluirlos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number < mayor) {
 							correcto = true;
@@ -1841,7 +2017,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %f y %f excluyendo el menor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number <= mayor) {
 							correcto = true;
@@ -1860,7 +2036,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %f y %f excluyendo el mayor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number < mayor) {
 							correcto = true;
@@ -1882,7 +2058,7 @@ public class Teclado {
 
 	}
 
-	public static long LecturaRango(long menor, long mayor, long number, Rango tipo) {
+	public static long LecturaRango(long menor, long mayor, long number, Rango tipo, String mensajeN) {
 
 		boolean correcto = false;
 
@@ -1893,7 +2069,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d estos incluidos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number <= mayor) {
 							correcto = true;
@@ -1911,7 +2087,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d sin incluirlos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number < mayor) {
 							correcto = true;
@@ -1930,7 +2106,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el menor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number <= mayor) {
 							correcto = true;
@@ -1949,7 +2125,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %d y %d excluyendo el mayor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number < mayor) {
 							correcto = true;
@@ -1971,7 +2147,7 @@ public class Teclado {
 
 	}
 
-	public static float LecturaRango(float menor, float mayor, float number, Rango tipo) {
+	public static float LecturaRango(float menor, float mayor, float number, Rango tipo, String mensajeN) {
 
 		boolean correcto = false;
 
@@ -1982,7 +2158,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %f y %f estos incluidos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number <= mayor) {
 							correcto = true;
@@ -2000,7 +2176,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %f y %f sin incluirlos %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number < mayor) {
 							correcto = true;
@@ -2019,7 +2195,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %f y %f excluyendo el menor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number > menor && number <= mayor) {
 							correcto = true;
@@ -2038,7 +2214,7 @@ public class Teclado {
 				do {
 					try {
 						System.out.printf("Escribe un número entre %f y %f excluyendo el mayor %n", menor, mayor);
-						number = LecturaNumero(number);
+						number = LecturaNumero(number, mensajeN);
 
 						if (number >= menor && number < mayor) {
 							correcto = true;
@@ -2060,34 +2236,4 @@ public class Teclado {
 
 	}
 
-	public static int MenuNumero(int numeroMenu) {
-		
-		
-		System.out.print("Inserta el número de la opción que desees \n"
-				+ "1. byte \n"
-				+ "2. short \n"
-				+ "3. int \n"
-				+ "4. long \n"
-				+ "5. float \n"
-				+ "6. double \n");
-		
-		numeroMenu=keyboard.nextInt();
-		keyboard.nextLine();
-		
-		return numeroMenu;
-	}
-	
-	public static int MenuComparacion(int numeroMenu) {
-		
-		
-		System.out.print("Inserta el número de la opción que desees \n"
-				+ "1. Meyor o igual \n"
-				+ "2. Menor o igual \n"
-				+ "3. mayor \n"
-				+ "4. menor \n");
-		numeroMenu=keyboard.nextInt();
-		keyboard.nextLine();
-		
-		return numeroMenu;
-	}
 }
