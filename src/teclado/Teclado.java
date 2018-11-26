@@ -45,8 +45,7 @@ public class Teclado {
 					+ "5. Para un número \n"
 					+ "6. Para una comparación \n"
 					+ "7. Para un rango \n"
-					+ "8. Para cerrar teclado \n"
-					+ "9. Para salir \n");
+					+ "8. Para cerrar teclado y salir \n");
 			
 			numeroMenu=keyboard.nextInt();
 			keyboard.nextLine();
@@ -143,7 +142,7 @@ public class Teclado {
 				do {
 				
 				System.out.print("Inserta el número de la opción que desees \n"
-						+ "1. Meyor o igual \n"
+						+ "1. Mayor o igual \n"
 						+ "2. Menor o igual \n"
 						+ "3. mayor \n"
 						+ "4. menor \n");
@@ -192,7 +191,7 @@ public class Teclado {
 				do {
 				
 				System.out.print("Inserta el número de la opción que desees \n"
-						+ "1. Meyor o igual \n"
+						+ "1. Mayor o igual \n"
 						+ "2. Menor o igual \n"
 						+ "3. mayor \n"
 						+ "4. menor \n");
@@ -239,7 +238,7 @@ public class Teclado {
 					do {
 				
 				System.out.print("Inserta el número de la opción que desees \n"
-						+ "1. Meyor o igual \n"
+						+ "1. Mayor o igual \n"
 						+ "2. Menor o igual \n"
 						+ "3. mayor \n"
 						+ "4. menor \n");
@@ -288,7 +287,7 @@ public class Teclado {
 					do {
 					
 					System.out.print("Inserta el número de la opción que desees \n"
-							+ "1. Meyor o igual \n"
+							+ "1. Mayor o igual \n"
 							+ "2. Menor o igual \n"
 							+ "3. mayor \n"
 							+ "4. menor \n");
@@ -301,23 +300,27 @@ public class Teclado {
 					case 1:
 						
 						System.out.println(LecturaComparacion(long1, long2, numero1, mensajeN));
+						salir3=true;
 						break;
 					
 					case 2:
 					
 					System.out.println(LecturaComparacion(long1, long2, numero2, mensajeN));
+					salir3=true;
 						break;
 
 					
 					case 3:
 						
 						System.out.println(LecturaComparacion(long1, long2, numero3, mensajeN));
+						salir3=true;
 							break;
 
 						
 					case 4:
 						
 						System.out.println(LecturaComparacion(long1, long2, numero4, mensajeN));
+						salir3=true;
 						break;
 					}
 					}
@@ -331,7 +334,7 @@ public class Teclado {
 					do {
 					
 					System.out.print("Inserta el número de la opción que desees \n"
-							+ "1. Meyor o igual \n"
+							+ "1. Mayor o igual \n"
 							+ "2. Menor o igual \n"
 							+ "3. mayor \n"
 							+ "4. menor \n");
@@ -378,7 +381,7 @@ public class Teclado {
 					do {
 					
 					System.out.print("Inserta el número de la opción que desees \n"
-							+ "1. Meyor o igual \n"
+							+ "1. Mayor o igual \n"
 							+ "2. Menor o igual \n"
 							+ "3. mayor \n"
 							+ "4. menor \n");
@@ -391,23 +394,27 @@ public class Teclado {
 					case 1:
 						
 						System.out.println(LecturaComparacion(double1, double2, numero1, mensajeN));
+						salir3=true;
 						break;
 					
 					case 2:
 					
 					System.out.println(LecturaComparacion(double1, double2, numero2, mensajeN));
+					salir3=true;
 						break;
 
 					
 					case 3:
 						
 						System.out.println(LecturaComparacion(double1, double2, numero3, mensajeN));
+						salir3=true;
 							break;
 
 						
 					case 4:
 						
 						System.out.println(LecturaComparacion(double1, double2, numero4, mensajeN));
+						salir3=true;
 						break;
 					}
 					}
@@ -697,23 +704,27 @@ public class Teclado {
 							case 1:
 								
 								System.out.println(LecturaRango(double2, double3, double1, tipo1, mensajeN));
+								salir3=true;
 								break;
 							
 							case 2:
 							
 							System.out.println(LecturaRango(double2, double3, double1, tipo2, mensajeN));
+							salir3=true;
 								break;
 
 							
 							case 3:
 								
 								System.out.println(LecturaRango(double2, double3, double1, tipo3, mensajeN));
+								salir3=true;
 									break;
 
 								
 							case 4:
 								
 								System.out.println(LecturaRango(double2, double3, double1, tipo4, mensajeN));
+								salir3=true;
 								break;
 							}
 							}
@@ -732,12 +743,6 @@ public class Teclado {
 					KeyboardClose();
 					salir1=true;
 				break;
-				
-				case 9:
-					salir1=true;
-					numeroMenu=0;
-					break;
-					
 		
 	
 		}
